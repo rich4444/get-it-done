@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/get-it-done/static/css/main.9ce4f234.css",
+    "main.js": "/get-it-done/static/js/main.b02a255d.js",
+    "static/media/bg.jpg": "/get-it-done/static/media/bg.bcbc6c83d9b24646d097.jpg",
+    "static/media/getitdone.png": "/get-it-done/static/media/getitdone.b35deefff1cf45f9b837.png",
+    "static/media/TOMATO.webp": "/get-it-done/static/media/TOMATO.9bec46b037fc6b7328bd.webp",
+    "index.html": "/get-it-done/index.html",
+    "main.9ce4f234.css.map": "/get-it-done/static/css/main.9ce4f234.css.map",
+    "main.b02a255d.js.map": "/get-it-done/static/js/main.b02a255d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ce4f234.css",
+    "static/js/main.b02a255d.js"
+  ]
+}
