@@ -1,38 +1,122 @@
+*,
+*::after,
+*::before:not(i) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
+}
+
+:root {
+    --main-color: rgb(0, 81, 255);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 30px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 .App {
-  text-align: center;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(179, 134, 10);
+    background-image: url("./images/bg.jpg");
+    background-size: cover;
+    overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+    width: 95%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    z-index: 10;
+    filter: drop-shadow(5px 5px 5px #222);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.notes-container {
+    width: 100%;
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    place-items: center;
+    gap: 30px;
+    margin: 40px 0 40px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.add-task {
+    padding: 5px 30px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bolder;
+    font-size: 1rem;
+    box-shadow: 2px 2px 0 0 black;
+    cursor: pointer;
+    animation: spawn 0.3s;
+    max-width: 80%;
 }
 
-.App-link {
-  color: #61dafb;
+.component {
+    animation: spawn 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes spawn {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
 }
+
+.mainButtonsContainer{
+    width: 100%;
+    text-align: center;
+}
+
+#openSettingsButton {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    #openSettingsButton {
+        position: static;
+        font-size: 1.8rem;
+    }
+
+    .mainButtonsContainer{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
