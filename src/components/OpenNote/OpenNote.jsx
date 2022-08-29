@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Status from "../Status/Status";
 
 function OpenNote({
     closeNote,
-    note,
     session,
     brk,
     settings,
@@ -13,7 +13,8 @@ function OpenNote({
     secondaryColor,
     opositeColor,
 }) {
-    const { title, content, color } = note;
+    const current = useSelector((state) => state.notes.current);
+    const { title, content, color } = current;
 
     const [sessionTime, setSessionTime] = useState(session);
     const [brkTime, setBrkTime] = useState(brk);

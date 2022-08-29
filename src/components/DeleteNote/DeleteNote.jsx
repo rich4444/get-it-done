@@ -1,15 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-function DeleteNote({ note, submitHandler, cancelHandler }) {
+function DeleteNote({ submitHandler, cancelHandler }) {
+    const current = useSelector((state) => state.notes.current);
+
     return (
-        <DeleteNoteDiv color={note !== undefined ? note.color : "transparent"}>
+        <DeleteNoteDiv
+            color={current !== undefined ? current.color : "transparent"}
+        >
             <h1>Delete Task?</h1>
             <div className="line"></div>
             <label htmlFor="deleteTask">
                 Enter the task name:
-                <br />(<span>{note !== undefined ? note.title : "NOMBRE"}</span>
-                )
+                <br />(
+                <span>{current !== undefined ? current.title : "NOMBRE"}</span>)
             </label>
             <input
                 name="deleteTask"
